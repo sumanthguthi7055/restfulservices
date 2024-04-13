@@ -11,3 +11,8 @@ This application was not hosted on any server so sql workbench was used to save 
 
 URL:
 http://localhost:8081/students
+
+Future Scope:
+  Add front end to CURD operations.
+  Deploy the db and the java application in server.
+  Host the server in the AWS Cloud.
