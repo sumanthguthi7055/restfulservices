@@ -7,8 +7,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -89,10 +91,12 @@ public class StudentController {
 
 	}	
 	
-	@DeleteMapping("/")
-	public void deleteStudent()
+	@DeleteMapping("/deleteStudent/{id}")
+	public String deleteStudent(@PathVariable int id)
 	{
-		
+		sjp.deleteById(id);
+		return "Student record deleted successfully";
+
 	}
 
 }
