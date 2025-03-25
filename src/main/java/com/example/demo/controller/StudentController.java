@@ -31,6 +31,7 @@ public class StudentController {
 	@GetMapping("/students")
 	public Collection<Student> getStudentDetails()
 	{
+		System.out.println("api called from front end");
 		sjp.findAll().stream().forEach(System.out::println);
 		return sjp.findAll();
 	}
@@ -49,6 +50,8 @@ public class StudentController {
 		sjp.getMobile().stream().forEach(System.out::println);
 
 		for (String s : sjp.getMobile()) {
+			if(s==null)
+				continue;
 		if(s.equalsIgnoreCase(studentDetails.getMobile()))
 		{
 			ind = true;
